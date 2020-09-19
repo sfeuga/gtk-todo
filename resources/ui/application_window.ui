@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.36.0
+
+Copyright (C) Stephane FEUGA OSHIMA <sfeuga@member.fsf.org>
+
+This file is part of gtk-ToDo.
+
+gtk-ToDo is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+gtk-ToDo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with gtk-ToDo.  If not, see <http://www.gnu.org/licenses/>.
+
+Author: Stéphane FEUGA OSHIMA
+
+-->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <!-- interface-license-type gplv3 -->
+  <!-- interface-name gtk-ToDo -->
+  <!-- interface-description a first Todo App to use GTK+ with Ruby -->
+  <!-- interface-copyright Stephane FEUGA OSHIMA <sfeuga@member.fsf.org> -->
+  <!-- interface-authors St\303\251phane FEUGA OSHIMA -->
+  <template class="TodoApplicationWindow" parent="GtkApplicationWindow">
+    <property name="can_focus">False</property>
+    <property name="window_position">center</property>
+    <property name="icon_name">task-due</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+  </template>
+</interface>
