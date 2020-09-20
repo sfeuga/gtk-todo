@@ -28,7 +28,7 @@ Author: Stéphane FEUGA OSHIMA
   <!-- interface-description a first Todo App to use GTK+ with Ruby -->
   <!-- interface-copyright Stephane FEUGA OSHIMA <sfeuga@member.fsf.org> -->
   <!-- interface-authors St\303\251phane FEUGA OSHIMA -->
-  <template class="TodoApplicationWindow" parent="GtkApplicationWindow">
+  <template class="ToDoApplicationWindow" parent="GtkApplicationWindow">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
     <property name="icon_name">task-due</property>
