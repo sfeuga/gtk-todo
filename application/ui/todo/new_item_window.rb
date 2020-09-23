@@ -32,6 +32,15 @@ module ToDo
       cancel_button.signal_connect 'clicked' do |button|
         close
       end
+
+      save_button.signal_connect 'clicked' do |button|
+        item.title = title_text_entry.text
+        item.notes = notes_text_view.buffer.text
+        item.priority = priority_combo_box.active_iter.get_value(0) if priority_combo_box.active_iter
+        item.save!
+
+        close
+      end
     end
 
     def priorities
