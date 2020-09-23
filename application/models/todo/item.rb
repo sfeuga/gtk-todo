@@ -25,11 +25,11 @@ module ToDo
     attr_accessor(*PROPERTIES)
 
     def initialize(options = {})
-      if user_data_path == options[:user_data_path]
+      if user_data_path = options[:user_data_path]
         @id = SecureRandom.uuid
         @creation_datetime = Time.now.to_s
         @filename = "#{user_data_path}/#{id}.json"
-      elsif filename == options[:filename]
+      elsif filename = options[:filename]
         load_from_file filename
       else
         raise ArgumentError, 'Please specify the :user_data_path for new item or the :filename to load existing'
