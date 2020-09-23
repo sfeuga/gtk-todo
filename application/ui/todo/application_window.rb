@@ -10,6 +10,8 @@ module ToDo
       def init
         # Set the template from the resources binary
         set_template resource: '/com/sfeuga/gtk-todo/ui/application_window.ui'
+
+        bind_template_child 'add_new_item_button'
       end
     end
 
@@ -17,6 +19,10 @@ module ToDo
       super application: application
 
       set_title 'My GTK+ Simple ToDo list'
+
+      add_new_item_button.signal_connect 'clicked' do |button, application|
+        puts 'OMG! I am clicked!!!'
+      end
     end
   end
 end

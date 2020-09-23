@@ -33,7 +33,12 @@ Author: Stéphane FEUGA OSHIMA
     <property name="window_position">center</property>
     <property name="icon_name">task-due</property>
     <child>
-      <placeholder/>
+      <object class="GtkButton" id="add_new_item_button">
+        <property name="label" translatable="yes">Add new item</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+      </object>
     </child>
     <child type="titlebar">
       <placeholder/>
