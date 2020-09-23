@@ -28,6 +28,10 @@ module ToDo
 
       priorities
       priority_combo_box.set_active(ToDo::Item::PRIORITIES.index(item.priority)) if item.priority
+
+      cancel_button.signal_connect 'clicked' do |button|
+        close
+      end
     end
 
     def priorities
