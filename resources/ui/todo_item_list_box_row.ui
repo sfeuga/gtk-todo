@@ -42,7 +42,6 @@ Author: Stéphane FEUGA OSHIMA
           <object class="GtkBox" id="todo_item_top_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_bottom">70</property>
             <property name="spacing">10</property>
             <child>
               <object class="GtkLabel" id="todo_item_title_label">
@@ -59,6 +58,22 @@ Author: Stéphane FEUGA OSHIMA
               </packing>
             </child>
             <child>
+              <object class="GtkLabel" id="todo_item_priority_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">18</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable="yes">Priority</property>
+                <property name="single_line_mode">True</property>
+                <property name="xalign">0.5</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="details_button">
                 <property name="label" translatable="yes">...</property>
                 <property name="visible">True</property>
@@ -68,7 +83,7 @@ Author: Stéphane FEUGA OSHIMA
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -86,7 +101,6 @@ Author: Stéphane FEUGA OSHIMA
               <object class="GtkBox" id="details_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_top">10</property>
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkButtonBox" id="todo_item_action_box">
