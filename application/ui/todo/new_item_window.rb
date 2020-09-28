@@ -29,17 +29,20 @@ module ToDo
       priorities
       priority_combo_box.set_active(ToDo::Item::PRIORITIES.index(item.priority)) if item.priority
 
-      cancel_button.signal_connect 'clicked' do |button|
+      cancel_button.signal_connect 'clicked' do |_button|
         close
       end
 
-      save_button.signal_connect 'clicked' do |button|
+      save_button.signal_connect 'clicked' do |_button|
         item.title = title_text_entry.text
         item.notes = notes_text_view.buffer.text
         item.priority = priority_combo_box.active_iter.get_value(0) if priority_combo_box.active_iter
         item.save!
 
         close
+
+        application_window = application.windows.find { |window| window.is_a? ToDo::ApplicationWindow }
+        application_window.load_todo_items
       end
     end
 

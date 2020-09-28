@@ -12,6 +12,18 @@ module ToDo
         set_template resource: '/com/sfeuga/gtk-todo/ui/application_window.ui'
 
         bind_template_child 'add_new_item_button'
+        bind_template_child 'todo_items_list_box'
+      end
+    end
+
+    def load_todo_items
+      todo_items_list_box.children.each { |child| todo_items_list_box.remove child }
+
+      json_files = Dir[File.join(File.expand_path(application.user_data_path), '*.json')]
+      items = json_files.map { |filename| ToDo::Item.new(filename: filename) }
+
+      items.each do |item|
+        todo_items_list_box.add(ToDo::ItemListBoxRow.new(item))
       end
     end
 
@@ -24,6 +36,8 @@ module ToDo
         new_item_window = NewItemWindow.new(application, ToDo::Item.new(user_data_path: application.user_data_path))
         new_item_window.present
       end
+
+      load_todo_items
     end
   end
 end
